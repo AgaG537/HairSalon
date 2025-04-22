@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox spacing="10" style="-fx-font-size: 16px; -fx-background-color: #89A8B2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.gui.controllers.Services.ServicesViewController">
+
+    <!-- Filtr -->
+    <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #B3C8CF">
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="serviceTypeField" promptText="Type"/>
+            <TextField fx:id="priceField" promptText="Maximum price"/>
+            <Button text="Filter" onAction="#handleFilterServices" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+
+    <!-- Tabela -->
+    <TableView fx:id="servicesTable" style = "-fx-padding: 15 30 15 30; -fx-background-color: #89A8B2" minHeight="500">
+        <columns>
+            <TableColumn fx:id="serviceTypeColumn" text="Type" style="-fx-font-size: 16px;" minWidth="300"/>
+            <TableColumn fx:id="priceColumn" text="Price" style="-fx-font-size: 16px;" minWidth="150"/>
+        </columns>
+    </TableView>
+
+    <!-- Przyciski -->
+    <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #B3C8CF">
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Add Service" onAction="#handleAddService" style="-fx-cursor: hand"/>
+            <Button text="Edit Service" onAction="#handleEditService" style="-fx-cursor: hand"/>
+            <Button text="Delete Service" onAction="#handleDeleteService" style="-fx-cursor: hand"/>
+            <Button text="Refresh" onAction="#handleRefresh" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+</VBox>

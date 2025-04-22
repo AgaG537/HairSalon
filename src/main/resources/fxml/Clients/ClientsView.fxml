@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox  spacing="10" style="-fx-font-size: 16px; -fx-background-color: #89A8B2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.gui.controllers.Clients.ClientsViewController">
+
+    <!-- Filtr -->
+    <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #B3C8CF">
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="firstNameField" promptText="First name"/>
+            <TextField fx:id="lastNameField" promptText="Last name"/>
+            <TextField fx:id="phoneNumberField" promptText="Phone number"/>
+            <TextField fx:id="emailField" promptText="Email"/>
+            <Button text="Filter" onAction="#handleFilterClients" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+
+    <!-- Tabela -->
+    <TableView fx:id="clientTable" style = "-fx-padding: 15 30 15 30; -fx-background-color: #89A8B2" minHeight="500">
+        <columns>
+            <TableColumn fx:id="firstNameColumn" text="First name" style="-fx-font-size: 16px;" minWidth="150"/>
+            <TableColumn fx:id="lastNameColumn" text="Last name" style="-fx-font-size: 16px;" minWidth="150"/>
+            <TableColumn fx:id="phoneNumberColumn" text="Phone number" style="-fx-font-size: 16px;" minWidth="130"/>
+            <TableColumn fx:id="emailColumn" text="Email" style="-fx-font-size: 16px;" minWidth="300"/>
+        </columns>
+    </TableView>
+
+    <!-- Przyciski -->
+    <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #B3C8CF">
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Add Client" onAction="#handleAddClient" style="-fx-cursor: hand"/>
+            <Button text="Edit Client" onAction="#handleEditClient" style="-fx-cursor: hand"/>
+            <Button text="Delete Client" onAction="#handleDeleteClient" style="-fx-cursor: hand"/>
+            <Button text="Refresh" onAction="#handleRefresh" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+</VBox>

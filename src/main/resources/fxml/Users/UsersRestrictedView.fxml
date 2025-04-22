@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox spacing="10" style="-fx-font-size: 16px; -fx-background-color: #89A8B2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.gui.controllers.Users.UsersRestrictedViewController">
+
+    <!-- Filtr -->
+    <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #B3C8CF">
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <TextField fx:id="firstNameField" promptText="First name"/>
+            <TextField fx:id="lastNameField" promptText="Last name"/>
+            <ChoiceBox fx:id="roleChoiceBox" style="-fx-cursor: hand">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value=""/>
+                        <String fx:value="admin"/>
+                        <String fx:value="assistant"/>
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Button text="Filter" onAction="#handleFilterUsers" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+
+    <!-- Tabela -->
+    <TableView fx:id="userTable" style = "-fx-padding: 15 30 15 30; -fx-background-color: #89A8B2" minHeight="500">
+        <columns>
+            <TableColumn fx:id="usernameColumn" text="Username" style="-fx-font-size: 16px;" minWidth="200"/>
+            <TableColumn fx:id="firstNameColumn" text="First name" style="-fx-font-size: 16px;" minWidth="150"/>
+            <TableColumn fx:id="lastNameColumn" text="Last name" style="-fx-font-size: 16px;" minWidth="150"/>
+            <TableColumn fx:id="roleColumn" text="Role" style="-fx-font-size: 16px;" minWidth="130"/>
+        </columns>
+    </TableView>
+
+    <VBox spacing="5" style="-fx-padding: 15; -fx-background-color: #B3C8CF">
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Refresh" onAction="#handleRefresh" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+</VBox>

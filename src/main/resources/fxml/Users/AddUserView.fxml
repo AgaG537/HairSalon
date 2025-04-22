@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<VBox style="-fx-padding: 30; -fx-background-color: #89A8B2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.controllers.Users.AddUserController">
+    <VBox spacing="20" style="-fx-padding: 15;-fx-background-color: #B3C8CF; -fx-font-size: 15; -fx-border-radius: 0 0 18 18; -fx-background-radius: 18 18 18 18;" alignment="CENTER">
+        <Label text="Add User" style="-fx-font-size: 20px;"/>
+        <TextField fx:id="usernameField" promptText="Username"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+        <TextField fx:id="firstNameField" promptText="First name"/>
+        <TextField fx:id="lastNameField" promptText="Last name"/>
+        <ChoiceBox fx:id="roleChoiceBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Submit" onAction="#handleAdd"/>
+            <Button text="Cancel" onAction="#handleCancel"/>
+        </HBox>
+    </VBox>
+</VBox>

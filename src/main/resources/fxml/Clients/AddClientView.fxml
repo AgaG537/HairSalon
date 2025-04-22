@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox style="-fx-padding: 30; -fx-background-color: #89A8B2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.controllers.Clients.AddClientController">
+    <VBox spacing="20" style="-fx-padding: 15;-fx-background-color: #B3C8CF; -fx-font-size: 15; -fx-border-radius: 0 0 18 18; -fx-background-radius: 18 18 18 18;" alignment="CENTER">
+        <Label text="Add Client" style="-fx-font-size: 20px;"/>
+        <TextField fx:id="firstNameField" promptText="First name"/>
+        <TextField fx:id="lastNameField" promptText="Last name"/>
+        <TextField fx:id="phoneNumberField" promptText="Phone number"/>
+        <TextField fx:id="emailField" promptText="Email"/>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Submit" onAction="#handleAdd"/>
+            <Button text="Cancel" onAction="#handleCancel"/>
+        </HBox>
+    </VBox>
+</VBox>

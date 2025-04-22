@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minWidth="850" minHeight="650" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui.controllers.UserInfo.MainRestrictedController">
+    <center>
+        <TabPane fx:id="tabPane" style="-fx-font-size: 15">
+            <Tab text="Main Page" closable="false">
+                <VBox alignment="CENTER" spacing="10" style="-fx-padding: 25; -fx-background-color: #89A8B2">
+                    <VBox style = "-fx-background-color: #B3C8CF; -fx-border-radius: 0 0 18 18; -fx-background-radius: 18 18 18 18; -fx-padding: 20 10 20 10; -fx-spacing: 15" alignment="CENTER">
+                        <Label fx:id="welcomeLabel" style="-fx-font-size: 30px;"/>
+                        <Label fx:id="usernameLabel" style="-fx-font-size: 20px;"/>
+                        <Label fx:id="userFirstNameLabel" style="-fx-font-size: 20px;"/>
+                        <Label fx:id="userLastNameLabel" style="-fx-font-size: 20px;"/>
+                        <Label fx:id="userRoleLabel" style="-fx-font-size: 20px;"/>
+                        <HBox spacing="15" alignment="CENTER">
+                            <Button text="Edit user data" onAction="#handleEditUser" style="-fx-font-size: 20px;"/>
+                            <Button text="Change password" onAction="#handleChangePassword" style="-fx-font-size: 20px;"/>
+                            <Button text="Log out" onAction="#handleLogout" style="-fx-font-size: 20px;"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </Tab>
+            <Tab text="Users" closable="false">
+                <fx:include source="../Users/UsersRestrictedView.fxml" fx:id="usersView"/>
+            </Tab>
+            <Tab text="Appointments" closable="false">
+                <fx:include source="../Appointments/AppointmentsView.fxml" fx:id="appointmentsView"/>
+            </Tab>
+            <Tab text="Clients" closable="false">
+                <fx:include source="../Clients/ClientsView.fxml" fx:id="clientsView"/>
+            </Tab>
+            <Tab text="Hairdressers" closable="false">
+                <fx:include source="../Hairdressers/HairdressersView.fxml" fx:id="hairdressersView"/>
+            </Tab>
+            <Tab text="Services" closable="false">
+                <fx:include source="../Services/ServicesView.fxml" fx:id="servicesView"/>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

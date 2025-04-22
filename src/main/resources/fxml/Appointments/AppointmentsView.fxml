@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox spacing="10" style="-fx-font-size: 14px; -fx-background-color: #89A8B2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.gui.controllers.Appointments.AppointmentsViewController">
+
+    <!-- Filtr -->
+    <VBox spacing="5" style="-fx-padding: 18; -fx-background-color: #B3C8CF; -fx-font-size: 15px;">
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="dateField" promptText="Date" maxWidth="85"/>
+            <TextField fx:id="timeField" promptText="Time" maxWidth="60"/>
+            <TextField fx:id="hairdresserInfoField" promptText="Hairdresser" maxWidth="150"/>
+            <ChoiceBox fx:id="statusChoiceBox" maxWidth="110" style="-fx-cursor: hand">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value=""/>
+                        <String fx:value="available"/>
+                        <String fx:value="booked"/>
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <TextField fx:id="clientInfoField" promptText="Client" maxWidth="180"/>
+            <TextField fx:id="serviceInfoField" promptText="Service" maxWidth="130"/>
+            <Button text="Filter" onAction="#handleFilterAppointments" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+
+    <!-- Tabela -->
+    <TableView fx:id="appointmentTable" style = "-fx-padding: 15 30 15 30; -fx-background-color: #89A8B2" minHeight="500">
+        <columns>
+            <TableColumn fx:id="dateColumn" text="Date" style="-fx-font-size: 14px;" minWidth="80"/>
+            <TableColumn fx:id="timeColumn" text="Time" style="-fx-font-size: 14px;" minWidth="70"/>
+            <TableColumn fx:id="hairdresserInfoColumn" text="Hairdresser" style="-fx-font-size: 13px;" minWidth="180"/>
+            <TableColumn fx:id="statusColumn" text="Status" style="-fx-font-size: 14px;" minWidth="70"/>
+            <TableColumn fx:id="clientInfoColumn" text="Client" style="-fx-font-size: 14px;"/>
+            <TableColumn fx:id="serviceInfoColumn" text="Service" style="-fx-font-size: 14px;"/>
+        </columns>
+    </TableView>
+
+    <!-- Przyciski -->
+    <VBox spacing="5" style="-fx-padding: 18; -fx-background-color: #B3C8CF; -fx-font-size: 14px;">
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Add Appointment" onAction="#handleAddAppointment" style="-fx-cursor: hand"/>
+            <Button text="Edit Appointment" onAction="#handleEditAppointment" style="-fx-cursor: hand"/>
+            <Button text="Delete Appointment" onAction="#handleDeleteAppointment" style="-fx-cursor: hand"/>
+            <Button text="Assign Client" onAction="#handleAddClientAppointment" style="-fx-cursor: hand"/>
+            <Button text="Edit Client" onAction="#handleEditClientAppointment" style="-fx-cursor: hand"/>
+            <Button text="Remove Client" onAction="#handleDeleteClientAppointment" style="-fx-cursor: hand"/>
+            <Button text="Refresh" onAction="#handleRefresh" style="-fx-cursor: hand"/>
+        </HBox>
+    </VBox>
+</VBox>
